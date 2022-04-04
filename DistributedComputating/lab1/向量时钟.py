@@ -54,8 +54,8 @@ if __name__ == '__main__':
     start = time.time()
 
     q = Queue()
-    lock_ = Lock()
     q.put(-1)
+    lock_ = Lock()
 
     # 设置并发进程数量及模拟进程运行时间
     process_num = 3
