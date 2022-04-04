@@ -11,10 +11,10 @@ def task(i, msg_q, lock, p_num, MaxTime):
         # 非最终时刻，更新数据 | 发送信息
         if i_ != MaxTime - 1:
             # 结点自身数据有4/10=0.4的概率更新
-            if random.randint(0, 9) < 5:
+            if random.randint(0, 9) < 4:
                 vector_clock[i] += 1
             # 结点有2/10=0.2的概率与另一个随机结点发生通信
-            if random.randint(0, 9) < 3:
+            if random.randint(0, 9) < 2:
                 msg_q.put([random.randint(0, p_num - 1), vector_clock])
         # 最终时刻，只同步信息
         else:
